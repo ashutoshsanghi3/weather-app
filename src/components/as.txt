@@ -1,0 +1,16 @@
+function tick(){
+    let time=new Date().toLocaleTimeString()
+    console.log(time)
+    document.getElementById("clock").innerText = time; 
+}
+function CurrentTime({data}){
+    setInterval(tick,1000);
+}
+
+export default CurrentTime
+let {timezone} = data;
+    let d=new Date();
+    let utc=d.getTime() + (d.getTimezoneOffset() * 60000);
+    let nd=new Date(utc + (1000*timezone));
+    console.log(nd)
+    let time=nd.toLocaleTimeString()
